@@ -17,7 +17,7 @@ const initialForm = {
 
 const errorMessages = {
   email: "Please enter a valid email address",
-  password: "Password must be at least 4 characters long",
+  password: "Password must be strong",
 };
 
 export default function Login() {
@@ -47,27 +47,6 @@ export default function Login() {
       setErrors(!strongPasswordRegex.test(event.target.value));
     }
   };
-
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     if (!isValid) return;
-  //     if (errors) return;
-
-  //     axios
-  //       .get("https://6540a96145bedb25bfc247b4.mockapi.io/api/login")
-  //       .then((res) => {
-  //         const user = res.data.find(
-  //           (item) => item.password == form.password && item.email == form.email,
-  //         );
-  //         if (user) {
-  //           setForm(initialForm);
-  //           navigate("/success");
-  //         } else {
-  //           console.log("hatalı");
-  //         }
-  //       });
-  //   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!isValid) return;
